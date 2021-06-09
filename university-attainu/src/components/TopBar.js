@@ -1,5 +1,4 @@
 import "./style/TopBar.css";
-import { Link } from "react-router-dom";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
 
 const TopBar = () => {
