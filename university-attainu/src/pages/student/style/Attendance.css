@@ -1,0 +1,26 @@
+body{
+  background-color: whitesmoke;
+  margin: 0;
+  padding: 0;
+}
+.attendance{
+  display: flex;
+  flex-direction: column;
+  /* margin-top: 2rem; */
+  /* max-width: 100%; */
+}
+.instructor{
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.card{
+  margin: 10px;
+  padding: 3em;
+}
+.card-heading{
+  font-size: 25px;
+}
+.mentor{
+  justify-content: space-evenly;
+  padding: 10px;
+}

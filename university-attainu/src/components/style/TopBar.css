@@ -1,0 +1,40 @@
+.circular--portrait {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.circular--portrait img {
+  height: 2rem;
+  width: 2rem;
+  /* width: 100%; */
+  /* height: auto; */
+}
+.profile {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.menu {
+  display: flex;
+  /* justify-content: center; */
+  gap: 1rem;
+}
+.menu select {
+  width: 12em;
+  height: 2rem;
+}
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+.profile{
+  text-align: right;
+  margin-left: 100px;
+}
