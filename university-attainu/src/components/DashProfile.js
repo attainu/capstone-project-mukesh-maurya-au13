@@ -16,7 +16,7 @@ const DashProfile = () => {
                     width="150"
                   />
                   <div className="mt-3">
-                    <h4>John Doe</h4>
+                    <h4>Mukesh Maurya</h4>
                     <p className="text-secondary mb-1">Full Stack Developer</p>
                     <p className="text-primary font-size-sm">
                       Git hub : https://github.com/mukesh-maurya-au13

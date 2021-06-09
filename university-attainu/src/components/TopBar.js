@@ -38,7 +38,7 @@ const TopBar = () => {
             <div className="profile collapse navbar-collapse">
               <div className="circular--portrait">
                 <img
-                  src="https://au-documents.s3.amazonaws.com/profile/mukesh-maurya.png"
+                  src="https://bootdey.com/img/Content/avatar/avatar7.png"
                   alt="profileImg"
                 />
               </div>
