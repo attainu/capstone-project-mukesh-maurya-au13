@@ -4,29 +4,29 @@ import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
-    <div class="container-fluid center">
-      <div class="container2 center2">
-        <div class="logo sub-logo">
+    <div className="container-fluid center">
+      <div className="container2 center2">
+        <div className="logo sub-logo">
           <img
             src="https://res.cloudinary.com/bookshelf/image/upload/v1622876232/AttainuClone/logo_wr8uxh.png"
-            class="bbgDoA"
+            className="bbgDoA"
             width="72px"
             height="72px"
           />
           <h1>AttainU</h1>
         </div>
-        <div class="input">
+        <div className="input">
           <form action="/">
             <input
               name="Name"
-              class="form userName"
+              className="form userName"
               type="text"
               placeholder="Name"
               required
             />
             <input
               name="mobile"
-              class="form userName"
+              className="form userName"
               type="tel"
               placeholder="Contact No."
               minlength="10"
@@ -35,28 +35,28 @@ const Signup = () => {
             />
             <input
               name="Email"
-              class="form userName"
+              className="form userName"
               type="email"
               placeholder="User Name"
               required
             />
             <input
               name="password"
-              class="form userName"
+              className="form userName"
               type="password"
               placeholder="Password"
               minlength="8"
               maxlength="20"
               required
             />
-            <div class="button ">
-              <button class="btn btn-warning text-white m-2">Submit</button>              
+            <div className="button ">
+              <button className="btn btn-warning text-white m-2">Submit</button>              
             </div>
           </form>
         </div>
-        <div class="login-footer login-footer-heading">
-          <span class="span-style for-login">Account exist?</span>
-          <Link to="/" class="click1 click2">
+        <div className="login-footer login-footer-heading">
+          <span className="span-style for-login">Account exist?</span>
+          <Link to="/" className="click1 click2">
             Login
           </Link>
         </div>

@@ -8,6 +8,8 @@
 # testing
 /coverage
 
+/src/1Deleted
+
 # production
 /build
 

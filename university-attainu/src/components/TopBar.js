@@ -30,19 +30,19 @@ const TopBar = () => {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="collapse navbar-collapse mx-3 menu">
+            <div className="collapse navbar-collapse mx-3 menu">
               <select name="batch" id="batch">
                 <option value="CV Raman">CV Raman</option>
               </select>
             </div>
-            <div class="profile collapse navbar-collapse">
-              <div class="circular--portrait">
+            <div className="profile collapse navbar-collapse">
+              <div className="circular--portrait">
                 <img
                   src="https://au-documents.s3.amazonaws.com/profile/mukesh-maurya.png"
                   alt="profileImg"
                 />
               </div>
-              <div class="text text-primary">User Name</div>
+              <div className="text text-primary">User Name</div>
             </div>
           </div>
         </div>
