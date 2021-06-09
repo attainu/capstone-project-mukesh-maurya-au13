@@ -1,14 +1,14 @@
 .circular--portrait {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 48px;
+  height: 48px;
   overflow: hidden;
   border-radius: 50%;
 }
 
 .circular--portrait img {
-  height: 2rem;
-  width: 2rem;
+  height: 3rem;
+  width: 3rem;
   /* width: 100%; */
   /* height: auto; */
 }
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  align-items: center;
+  /* align-items: center; */
 }
 .menu {
   display: flex;
@@ -24,17 +24,27 @@
   gap: 1rem;
 }
 .menu select {
-  width: 12em;
+  width: 15em;
   height: 2rem;
 }
 
 #content {
+  /* min-width: 100vh; */
   width: 100%;
   padding: 20px;
   min-height: 100vh;
   transition: all 0.3s;
 }
-.profile{
+.profile {
   text-align: right;
   margin-left: 100px;
+}
+
+.topbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100% !important;
+  left: 20%;
+  /* z-index: -20; */
 }

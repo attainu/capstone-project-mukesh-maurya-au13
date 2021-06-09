@@ -2,7 +2,7 @@ import React from 'react'
 
 const Library = () => {
   return (
-    <div>
+    <div className="container">
       <h1>THis is library page</h1>
     </div>
   )

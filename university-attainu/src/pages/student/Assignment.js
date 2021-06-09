@@ -2,7 +2,7 @@ import React from "react";
 
 const Assignment = () => {
   return (
-    <div>
+    <div className="container">
       <nav aria-label="...">
         <ul className="pagination">
           <li className="page-item disabled">

@@ -6,8 +6,6 @@ body{
 .attendance{
   display: flex;
   flex-direction: column;
-  /* margin-top: 2rem; */
-  /* max-width: 100%; */
 }
 .instructor{
   justify-content: space-evenly;
