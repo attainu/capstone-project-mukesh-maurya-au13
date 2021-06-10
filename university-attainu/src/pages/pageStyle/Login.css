@@ -159,7 +159,7 @@ data-styled.g26[id="login-footer"] {
 .input {
   /* align-items: center; */
   margin: 4rem;
-  margin-top: 10rem;
+  margin-top: 8rem;
   padding: 5px;
 }
 .form {
@@ -170,7 +170,7 @@ data-styled.g26[id="login-footer"] {
 }
 .button {
   padding: 5px;
-  margin: 5px;
+  margin-top: 0px !important;
 }
 
 /* ============= Reset Password =============== */

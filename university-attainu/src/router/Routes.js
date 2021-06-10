@@ -1,9 +1,6 @@
-import React from 'react';
-import { Route, Switch } from "react-router-dom";
-
-// import LoginPage from "../pages/Login";
-// import Signup from "../pages/Signup";
-// import ForgetPass from "../pages/ForgetPass";
+import LoginPage from "../pages/Login";
+import Signup from "../pages/Signup";
+import ForgetPass from "../pages/ForgetPass";
 
 import Dashboard from "../pages/Dashboard";
 import Announcement from "../pages/Announcement";
@@ -18,29 +15,27 @@ import ResolvedQues from "../pages/askDoubt/ResolvedQues";
 
 import Session from "../pages/Session";
 import RecentPlacements from "../pages/RecentPlacements";
+import { PATH } from "../config/webPath";
 
-const Routes = () => {
-  return (
-    <div className="routes">
-      <Switch>
-        {/* <Route exact path="/" component={LoginPage}/>
-        <Route exact path="/signup" component={Signup}/>
-        <Route exact path="/forget-pass" component={ForgetPass}/> */}
+const Routes = [
+  { exact: true, path: "/", component: LoginPage },
+  { exact: true, path: "/signup", component: Signup },
+  { exact: true, path: "/forget-pass", component: ForgetPass },
 
-        <Route exact path="/dashboard" component={Dashboard}/>
-        <Route exact path="/announcement" component={Announcement}/>
-        <Route exact path="/attendance" component={Attendance}/>
-        <Route exact path="/assignment" component={Assignment}/>
-        <Route exact path="/test" component={Test}/>
-        <Route exact path="/library" component={Library}/>
-        <Route exact path="/pending-ques" component={PendingQues}/>
-        <Route exact path="/resolve-ques" component={ResolvedQues}/>
-        <Route exact path="/session" component={Session}/>
-        <Route exact path="/recent-placements" component={RecentPlacements}/>
-
-      </Switch>
-    </div>
-  )
-}
+  { exact: true, path: PATH.DASHBOARD, component: Dashboard },
+  { exact: true, path: PATH.ANNOUNCEMENT, component: Announcement },
+  { exact: true, path: PATH.ATTENDANCE, component: Attendance },
+  { exact: true, path: PATH.ASSIGNMENT, component: Assignment },
+  { exact: true, path: PATH.TEST, component: Test },
+  { exact: true, path: PATH.LIBRARY, component: Library },
+  { exact: true, path: PATH.PENDING_QUES, component: PendingQues },
+  { exact: true, path: PATH.RESOLVE_QUES, component: ResolvedQues },
+  { exact: true, path: PATH.SESSION, component: Session },
+  {
+    exact: true,
+    path: PATH.RECENT_PLACEMENTS,
+    component: RecentPlacements,
+  },
+];
 
 export default Routes;
