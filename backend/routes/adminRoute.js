@@ -1,10 +1,18 @@
 const express = require("express");
 const router = express.Router();
 const admin = require('./../controllers/admin');
+const authController = require('./../controllers/authController');
 
 
-router.post("/assignment", admin.uploadUserPhoto, admin.assignment);
-// router.get('/download/:id', admin.download);
+router.post("/upload", admin.uploadUserPhoto, admin.upload);
+
+//get all user
+router.get(
+  "/getAllUsers",
+  authController.protect,
+  authController.restrictTo,
+  admin.getAllUsers
+);
 
 
 

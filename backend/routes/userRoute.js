@@ -19,9 +19,11 @@ router.patch(
 router.patch("/userUpdate", authController.protect, userController.userUpdate);
 router.delete("/deleteUser", authController.protect, userController.deleteUser);
 
-router.get('/getAllUsers', authController.protect, authController.restrictTo, userController.getAllUsers);
+
 // .post(userController.creatUser);
 
+router.get("/download/:id", authController.protect, userController.download);
 
+router.get("/allques", authController.protect, userController.allques);
 
 module.exports = router;

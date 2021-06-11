@@ -1,4 +1,6 @@
 const User = require("./../model/userSchema");
+const fs = require("fs");
+const quesModel = require("./../model/quesSchema");
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
@@ -9,25 +11,6 @@ const filterObj = (obj, ...allowedFields) => {
     }
   });
   return newObj;
-};
-
-exports.getAllUsers = async (req, res) => {
-  try {
-    const users = await User.find();
-
-    return res.status(200).json({
-      status: "success",
-      res: users.length,
-      data: {
-        users,
-      },
-    });
-  } catch (error) {
-    return res.status(400).json({
-      status: "fail",
-      message: error,
-    });
-  }
 };
 
 
@@ -66,3 +49,27 @@ exports.deleteUser = async (req, res, next) => {
     data: null
   });
 }
+
+//get all questions
+app.get("/allques", async (req, res) => {
+  const data = await quesModel.find({});
+  if (!data) {
+    console.log("nothing");
+  } else {
+    res.status(200).json({
+      status: "success",
+      data,
+    });
+  }
+});
+
+//download a quest
+app.get("/downloadFile/:id", async (req, res) => {
+  const file = await quesModel.findById({ _id: req.params.id });
+  console.log(file);
+  const files = fs.createReadStream(`${file.picPath}`);
+  res.writeHead(200, {
+    "Content-disposition": `attachment; filename=${file.picPath}`,
+  }); 
+  files.pipe(res);
+});
