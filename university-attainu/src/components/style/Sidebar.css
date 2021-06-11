@@ -48,8 +48,11 @@ span {
 ----------------------------------------------------- */
 
 .wrapper {
+  position: relative;
   display: flex;
   align-items: stretch;
+  overflow-y: scroll;
+  max-height: 100vh;
 }
 
 #sidebar {

@@ -28,3 +28,21 @@
   display: flex;
   flex-direction: row;
 }
+
+/* Announcement */
+.announce-section{
+  max-width: 70%;
+  margin-left: 3rem;
+  overflow-y: scroll;
+}
+.announce-container{
+  margin-top: 2rem;
+}
+.announce{
+  display: flex;
+  flex-direction: row;
+}
+.announce .card-header{
+  background-color: var(--blue);
+  color: white;
+}

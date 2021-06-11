@@ -102,7 +102,7 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/discussion">
+            <Link to="/https://forum.attainu.com/">
               <SortByAlphaIcon /> Discussion Forum
             </Link>
           </li>

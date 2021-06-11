@@ -1,9 +1,14 @@
 import React from "react";
+import Announce from "../components/Announce";
+import "./pageStyle/Session.css"
 
 const Announcement = () => {
   return (
-    <div>
-      <h1>This is Announcement Page/</h1>
+    <div className="announce-container">
+      <div className="display-6 text-primary mx-5 p-2">Announcement</div>
+      <Announce/>
+      <Announce/>
+      <Announce/>
     </div>
   );
 };
