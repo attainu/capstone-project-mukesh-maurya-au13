@@ -14,7 +14,11 @@ router.get(
   admin.getAllUsers
 );
 
+//admin--update user
+router.put('/updateProfile/:id', authController.protect, authController.restrictTo, admin.updateProfile)
+
 //delete a user
 router.delete('/deleteUser/:id', authController.protect, admin.deleteUser);
+
 
 module.exports = router;

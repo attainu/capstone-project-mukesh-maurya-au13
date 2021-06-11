@@ -38,7 +38,7 @@ exports.userUpdate = async (req, res, next) => {
   /// filtered out the unwanted field names that are not allowed to be updated
   const filteredBody = filterObj(req.body, "name", "email", "phone");
 
-  //update user document
+  //update user document, update role is not allowed(only admin can update the role)
   const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
     new: true,
     runValidators: true,
