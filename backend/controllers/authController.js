@@ -80,7 +80,7 @@ exports.login = async (req, res, next) => {
   createSendToken(user, 200, res);
 };
 
-//protecting all tours routes
+//protecting all 
 exports.protect = async (req, res, next) => {
   let token;
   if (

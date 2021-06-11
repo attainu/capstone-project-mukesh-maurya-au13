@@ -13,6 +13,8 @@ const filterObj = (obj, ...allowedFields) => {
   return newObj;
 };
 
+//get user profile
+
 
 //update user data
 exports.userUpdate = async (req, res, next) => {
