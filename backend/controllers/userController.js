@@ -14,6 +14,14 @@ const filterObj = (obj, ...allowedFields) => {
 };
 
 //get user profile
+exports.getUserProfile = async (req, res, next) => {
+  const user = await User.findOne({ email: req.user.email });
+  console.log(user)
+  if(!user) {
+    return next(res.status(404).json({status: 'fail', message: 'No such user exists'}))
+  }
+  return res.status(200).json({status: 'success', userInfo: user});
+}
 
 
 //update user data
@@ -44,7 +52,7 @@ exports.userUpdate = async (req, res, next) => {
 };
 
 //delete a user
-exports.deleteUser = async (req, res, next) => {
+exports.deactivateUser = async (req, res, next) => {
   await User.findByIdAndUpdate(req.user.id, {isActive: false});
   res.status(204).json({
     status: 'success',
@@ -53,7 +61,7 @@ exports.deleteUser = async (req, res, next) => {
 }
 
 //get all questions
-app.get("/allques", async (req, res) => {
+exports.allques = async (req, res) => {
   const data = await quesModel.find({});
   if (!data) {
     console.log("nothing");
@@ -63,10 +71,10 @@ app.get("/allques", async (req, res) => {
       data,
     });
   }
-});
+};
 
 //download a quest
-app.get("/downloadFile/:id", async (req, res) => {
+exports.downloadFile = async (req, res) => {
   const file = await quesModel.findById({ _id: req.params.id });
   console.log(file);
   const files = fs.createReadStream(`${file.picPath}`);
@@ -74,4 +82,4 @@ app.get("/downloadFile/:id", async (req, res) => {
     "Content-disposition": `attachment; filename=${file.picPath}`,
   }); 
   files.pipe(res);
-});
+};

@@ -6,6 +6,10 @@ const authController = require("./../controllers/authController");
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 
+//user profile
+router.get("/getUserProfile", authController.protect, userController.getUserProfile);
+
+
 // forgot password &reset password route
 router.post("/forgotPassword", authController.forgotPassword); //will receive email address
 router.patch("/resetPassword/:token", authController.resetPassword); //will receive the token
@@ -17,12 +21,12 @@ router.patch(
 );
 
 router.patch("/userUpdate", authController.protect, userController.userUpdate);
-router.delete("/deleteUser", authController.protect, userController.deleteUser);
+router.delete("/deactivateUser", authController.protect, userController.deactivateUser);
 
 
 // .post(userController.creatUser);
 
-router.get("/download/:id", authController.protect, userController.download);
+router.get("/downloadFile/:id", authController.protect, userController.downloadFile);
 
 router.get("/allques", authController.protect, userController.allques);
 

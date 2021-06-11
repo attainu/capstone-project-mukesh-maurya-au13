@@ -137,7 +137,7 @@ exports.protect = async (req, res, next) => {
 
   //GRANT ACCESS TO PROTECTED ROUTE
   req.user = checkUser;
-  console.log(req.user);
+  // console.log(req.user);
   next();
 };
 

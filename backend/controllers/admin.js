@@ -1,5 +1,7 @@
 const multer = require("multer");
 const quesModel = require("./../model/quesSchema");
+const User = require("./../model/userSchema");
+
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -15,7 +17,9 @@ const upload = multer({
   storage: storage,
 });
 
-app.post("/upload", upload.single("picPath"), async (req, res) => {
+exports.uploadUserPhoto = upload.single("picPath"),
+
+exports.upload =  async (req, res) => {
   const question = await quesModel.findOne({ day: req.body.day });
   if (question) {
     return res
@@ -31,7 +35,7 @@ app.post("/upload", upload.single("picPath"), async (req, res) => {
     picPath: req.file.filename,
   });
   return res.status(201).json({ status: "success", newQuestion });
-});
+};
 
 //get all the users
 exports.getAllUsers = async (req, res) => {
@@ -52,3 +56,14 @@ exports.getAllUsers = async (req, res) => {
     });
   }
 };
+
+//delete a users
+exports.deleteUser = async (req, res, next) => {
+  const user = await User.findById(req.params.id);
+  if(user) {
+    await user.remove();
+    return res.json({message: 'User removed'});
+  }else {
+    return res.status(404).json({message: 'User not found'});
+  }
+}

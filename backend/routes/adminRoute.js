@@ -14,6 +14,7 @@ router.get(
   admin.getAllUsers
 );
 
-
+//delete a user
+router.delete('/deleteUser/:id', authController.protect, admin.deleteUser);
 
 module.exports = router;
