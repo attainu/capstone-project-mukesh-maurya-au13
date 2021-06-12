@@ -144,7 +144,7 @@ exports.protect = async (req, res, next) => {
 exports.restrictTo = (req, res, next) => {
   // return (req, res, next) => {
     //only admin
-    if (req.user && req.user.role === 'admin') {
+    if (req.user && (req.user.role === 'admin' || req.user.role === 'instructor')) {
       next();
       
     }else {

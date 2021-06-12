@@ -3,6 +3,10 @@ const router = express.Router();
 const userController = require("./../controllers/userController");
 const authController = require("./../controllers/authController");
 
+//get mcq
+router.get('/getMcq', authController.protect, userController.getMcq);
+router.post('/markMcq/:id', authController.protect, userController.markMcq);
+
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 

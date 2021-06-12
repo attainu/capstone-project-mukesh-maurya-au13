@@ -7,6 +7,7 @@ app.use(cookieParser());
 
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
+const instructorRoute = require('./routes/instructorRoute');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -22,6 +23,7 @@ app.use(express.static('public'));
 
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/admin', adminRoute);
+app.use("/api/v1/instructor", instructorRoute);
 // server listening
 
 app.listen(PORT, (err) => {

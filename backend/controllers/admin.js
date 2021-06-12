@@ -1,4 +1,5 @@
 const multer = require("multer");
+const Pagination = require("../features/pagination");
 const quesModel = require("./../model/quesSchema");
 const User = require("./../model/userSchema");
 
@@ -36,7 +37,11 @@ const upload = multer({
 //get all the users
 exports.getAllUsers = async (req, res) => {
   try {
-    const users = await User.find();
+
+    const feature = new Pagination(User.find(), req.query).
+    paginate();
+
+    const users = await feature.query;
 
     return res.status(200).json({
       status: "success",
