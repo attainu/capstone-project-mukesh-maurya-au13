@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
+// mongoose.connect("mongodb://localhost:27017/university-attainu")
 
 const dB = process.env.DATABASE;
-
 mongoose
   .connect(dB, {
     useNewUrlParser: true,
