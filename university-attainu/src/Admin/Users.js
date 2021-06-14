@@ -1,12 +1,21 @@
 import React from "react";
+import { fetchUser } from "../Redux/action/userAction";
 import AdminSidebar from "./AdminSidebar";
+// import {connect} from "react-redux";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
 const Users = () => {
+  const usersList = useSelector((state) => state.usersList);
+  const dispatch = useDispatch();
+  // console.log("state", state);
+  console.log("user tab", usersList);
   return (
     <div>
       <div className="w3-bar w3-top w3-black w3-large" style={{ zIndex: 4 }}>
         <button
           className="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"
-          onclick="w3_open();"
+          onClick="w3_open()"
         >
           <i className="fa fa-bars"></i>  Menu
         </button>
@@ -31,22 +40,7 @@ const Users = () => {
             </thead>
             <tbody>
               <tr>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-              </tr>
-              <tr>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-                <td>Mukesh</td>
-              </tr>
-              <tr>
+                {/* <h1>{console.log("++++++",props.userList)}</h1> */}
                 <td>Mukesh</td>
                 <td>Mukesh</td>
                 <td>Mukesh</td>
@@ -56,10 +50,27 @@ const Users = () => {
               </tr>
             </tbody>
           </table>
+          <button
+            onClick={() => dispatch(fetchUser())}
+            className="btn btn-success"
+          >
+            get user
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
+// const mapStateToProps=(state)=>{
+//   return {
+//     userList:state.userList
+//   }
+// }
+// const mapDispatchToProps=(dispatch)=>{
+//   return {
+//     fetchUsers: ()=> dispatch(fetchUser())
+//   }
+// }
+// export default connect(mapStateToProps, mapDispatchToProps)(Users);
 export default Users;

@@ -21,8 +21,8 @@ const DashProfile = () => {
                     <p className="text-primary font-size-sm">
                       Git hub : https://github.com/mukesh-maurya-au13
                     </p>
-                    <button className="btn btn-primary">Follow</button>
-                    <button className="btn btn-outline-primary">Message</button>
+                    <button className="btn btn-primary m-1">Change Avatar</button>
+                    <button className="btn btn-outline-primary m-2">Edit Profile</button>
                   </div>
                 </div>
               </div>

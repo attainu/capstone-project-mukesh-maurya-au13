@@ -1,8 +1,12 @@
 import React from "react";
 import "./pageStyle/Login.css";
 import { Link } from "react-router-dom";
+import {useState} from "react"
 
 const Signup = () => {
+  // const [name, setName] = useState("")
+  // const [contact, setContact] = useState("")
+  // const [email, setEmail] = useState("")
   return (
     <div className="container-fluid center">
       <div className="container2 center2">
@@ -12,11 +16,12 @@ const Signup = () => {
             className="bbgDoA"
             width="72px"
             height="72px"
+            alt="logo"
           />
           <h1>AttainU</h1>
         </div>
         <div className="input">
-          <form action="/">
+          <form action="/signup" method="GET">
             <input
               name="Name"
               className="form userName"

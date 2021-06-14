@@ -5,7 +5,14 @@ import "./pageStyle/Session.css"
 const Announcement = () => {
   return (
     <div className="announce-container">
-      <div className="display-6 text-primary mx-5 p-2">Announcement</div>
+      <div className="display-6 text-primary m-5 p-2">Announcement</div>
+      <Announce/>
+      <Announce/>
+      <Announce/>
+      <Announce/>
+      <Announce/>
+      <Announce/>
+      <Announce/>
       <Announce/>
       <Announce/>
       <Announce/>

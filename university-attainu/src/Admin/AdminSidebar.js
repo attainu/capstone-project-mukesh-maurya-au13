@@ -1,12 +1,12 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const AdminSidebar = () => {
   return (
     <div className="admin-sidebar">
       <nav
         className="w3-sidebar w3-collapse w3-white w3-animate-left"
-        style={{ "z-index": 3, width: "300px" }}
+        style={{ zIndex: 3, width: "300px" }}
         id="mySidebar"
       >
         <br />
@@ -16,6 +16,7 @@ const AdminSidebar = () => {
               src="https://i.pinimg.com/236x/64/79/39/647939e2da4a27d126bf47cd0e889cd1.jpg"
               className="w3-circle w3-margin-right"
               style={{ width: "46px" }}
+              alt="avatar"
             />
           </div>
           <div className="w3-col s8 w3-bar">
@@ -42,7 +43,7 @@ const AdminSidebar = () => {
           <Link
             to="#"
             className="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
-            onclick="w3_close()"
+            onClick="w3_close()"
             title="close menu"
           >
             <i className="fa fa-remove fa-fw"></i>  Close Menu
