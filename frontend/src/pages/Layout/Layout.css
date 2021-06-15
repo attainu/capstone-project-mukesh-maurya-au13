@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  display: flex;
+  flex-direction: row;
+}
+.main-area {
+  display: flex;
+  flex-direction: column;
+}
+.topbar {
+  margin-right: 0;
+}
+.router {
+  position: absolute;
+  margin: 0 1rem;
+  margin-top: 5rem !important;
+  background-color: #f0f2f5;
+  height: 100% !important;
+  width: 100% !important;
+}
+/* .sidebar{
+  height: fit-content !important;
+  height: 100vh !important;
+} */

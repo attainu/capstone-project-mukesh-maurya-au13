@@ -1,0 +1,22 @@
+body{
+  background-color: whitesmoke;
+}
+.test-score{
+  padding-top: 0; 
+}
+.testRank{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 1rem;
+
+}
+.card{
+  padding: 2rem;
+}
+.testStick{
+  background-color: var(--blue);
+  color: white;
+  /* margin-top: 2rem; */
+  
+}
