@@ -18,6 +18,10 @@
 .card-header{
   color: var(--blue);
 }
+.recentPlacement{
+ overflow-x: scroll;
+ margin: 5rem;
+}
 .placement{
   /* display: flex;
   flex-direction: row;
@@ -37,6 +41,10 @@
 }
 .announce-container{
   margin-top: 2rem;
+  margin-left: 4rem;
+  max-width: 100vh;
+  max-height: 80vh;
+  overflow-y: scroll;
 }
 .announce{
   display: flex;
@@ -46,3 +54,8 @@
   background-color: var(--blue);
   color: white;
 }
+/* .announce{
+  max-width: 100vh;
+  max-height: 100vh;
+  overflow-y: scroll;
+} */

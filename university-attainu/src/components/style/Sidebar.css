@@ -5,7 +5,7 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
   font-family: "Poppins", sans-serif;
-  background: #fafafa;
+  /* background: #fafafa; */
 }
 
 a,
@@ -52,7 +52,7 @@ span {
   display: flex;
   align-items: stretch;
   overflow-y: scroll;
-  max-height: 100vh;
+  max-height: 100vh !important;
 }
 
 #sidebar {

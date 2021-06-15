@@ -1,19 +1,19 @@
-body{
+body {
   margin: 0;
   padding: 0;
 }
-.App{
-  display:flex;
+.App {
+  display: flex;
   flex-direction: row;
 }
-.main-area{
+.main-area {
   display: flex;
   flex-direction: column;
 }
-.topbar{
+.topbar {
   margin-right: 0;
 }
-.router{
+.router {
   position: absolute;
   margin: 0 1rem;
   margin-top: 5rem !important;
@@ -21,3 +21,7 @@ body{
   height: 100% !important;
   width: 100% !important;
 }
+/* .sidebar{
+  height: fit-content !important;
+  height: 100vh !important;
+} */
