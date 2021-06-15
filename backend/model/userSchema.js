@@ -16,6 +16,7 @@ const userSchema = new mongoose.Schema({
     lowercase: true,
     validate: [validator.isEmail, "Please provide a valid email"],
   },
+  mobile: Number,
   photo: String,
   role: {
     type: String,
@@ -48,7 +49,9 @@ const userSchema = new mongoose.Schema({
     default: true,
     select: false, //so that no one knows that this active flag is here
   },
-});
+},
+{timestamps: true}
+);
 
 userSchema.pre("save", async function (next) {
   //only run this function if password was actually modified

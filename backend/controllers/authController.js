@@ -37,6 +37,7 @@ exports.signup = async (req, res, next) => {
   try {
     const newUser = await User.create({
       name: req.body.name,
+      mobile: req.body.mobile,
       email: req.body.email,
       password: req.body.password,
       passwordConfirm: req.body.passwordConfirm,
@@ -47,7 +48,7 @@ exports.signup = async (req, res, next) => {
     createSendToken(newUser, 201, res);
 
   } catch (error) {
-    return res.status(404).json({
+    return res.status(422).json({
       status: "fail",
       message: error,
     });
