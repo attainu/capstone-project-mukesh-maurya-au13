@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+  min-width: 100% !important;
+  background-image: url("https://res.cloudinary.com/bookshelf/image/upload/v1622876236/AttainuClone/Graduation_cap_satczd.jpg");
+}
+
+input[type="text"]:focus {
+  outline: none !important;
+  outline-offset: none !important;
+}
+.ant-modal {
+  min-width: 700px;
+}
+@media (max-width: 750px) {
+  .ant-modal {
+    min-width: 90%;
+  }
+}
+.ant-modal-content {
+  padding: 0 20px;
+}
+data-styled.g1[id="sc-global-iqCeaQ1"] {
+  content: "sc-global-iqCeaQ1,";
+}
+.bbgDoA {
+  height: 72px;
+  width: 72px;
+}
+data-styled.g13[id="image__Image-sc-1x12vdf-0"] {
+  content: "bbgDoA,";
+}
+.center {
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) 0% 0% /
+      cover no-repeat fixed,
+    url("https://res.cloudinary.com/bookshelf/image/upload/v1622876236/AttainuClone/Graduation_cap_satczd.jpg");
+  color: #123c69;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media (max-width: 36em) {
+  .center {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)) 0% 0% /
+        cover no-repeat fixed,
+      url("https://res.cloudinary.com/bookshelf/image/upload/v1622876236/AttainuClone/Graduation_cap_satczd.jpg");
+    background-size: 100vw 100vh;
+  }
+}
+@media (max-width: 75em) {
+  .center {
+    background-size: 100vw 100vh;
+  }
+}
+data-styled.g16[id="container"] {
+  content: "center,";
+}
+.center2 {
+  height: 460px;
+  width: 400px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 0 7px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+@media (max-width: 36em) {
+  .center2 {
+    width: 350px;
+  }
+}
+@media (max-width: 23.75em) {
+  .center2 {
+    width: 300px;
+    height: 430px;
+  }
+}
+/* data-styled.g19[id="style__Container-wvo77o-0"] {
+        content: "center2,"
+      } */
+.sub-logo {
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  background-color: #123c69;
+  width: 360px;
+  height: 120px;
+  z-index: 1;
+  border-radius: 0;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+@media (max-width: 36em) {
+  .sub-logo {
+    width: 310px;
+  }
+}
+@media (max-width: 23.75em) {
+  .sub-logo {
+    width: 260px;
+    height: 120px;
+  }
+}
+.sub-logo h1 {
+  margin: 0 0 0 10px;
+  color: white;
+}
+data-styled.g20[id="logo"] {
+  content: "sub-logo,";
+}
+.for-login {
+  color: #bfbfbf;
+  margin-right: 5px;
+}
+data-styled.g24[id="span-style"] {
+  content: "for-login,";
+}
+.click2 {
+  color: #123c69 !important;
+  cursor: pointer;
+}
+.click2:hover {
+  opacity: 0.8;
+}
+data-styled.g25[id="click1"] {
+  content: "click2,";
+}
+.login-footer-heading {
+  position: absolute;
+  bottom: 25px;
+  text-align: center;
+  width: 100%;
+}
+data-styled.g26[id="login-footer"] {
+  content: "login-footer-heading,";
+}
+.input {
+  /* align-items: center; */
+  margin: 4rem;
+  margin-top: 8rem;
+  padding: 5px;
+}
+.form {
+  padding: 5px;
+  margin: 5px;
+  border: none;
+  border-bottom: 1px solid #123c69;
+}
+.button {
+  padding: 5px;
+  margin-top: 0px !important;
+}
+
+/* ============= Reset Password =============== */
+
+.resetPassword {
+  margin-left: 20px;
+}
