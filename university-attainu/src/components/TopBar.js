@@ -1,5 +1,6 @@
 import "./style/TopBar.css";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
+import { Link } from "react-router-dom";
 
 const TopBar = () => {
   return (
@@ -34,14 +35,38 @@ const TopBar = () => {
                 <option value="CV Raman">CV Raman</option>
               </select>
             </div>
-            <div className="profile collapse navbar-collapse">
+            <div className="profile collapse navbar-collapse ">
               <div className="circular--portrait">
-                <img
-                  src="https://bootdey.com/img/Content/avatar/avatar7.png"
-                  alt="profileImg"
-                />
+                <Link to="/dashboard">
+                  <img
+                    src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                    alt="profileImg"
+                  />
+                </Link>
               </div>
-              <div className="text text-primary">User Name</div>
+              <div
+                className="text text-primary dropdown-toggle "
+                type="button"
+                data-toggle="dropdown"
+              >
+                User Name
+                <span class="caret"></span>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li>
+                    <Link className="dropdown-item" to="#">
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider" />
+                  </li>
+                  <li>
+                    <Link className="dropdown-item" to="user/logout  ">
+                      Logout
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

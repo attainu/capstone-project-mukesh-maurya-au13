@@ -1,5 +1,6 @@
 import React from "react";
 import "./style/Attendance.css";
+import AttendanceModel from "../../components/students/AttendanceModel";
 
 const Attendance = () => {
   return (
@@ -7,8 +8,10 @@ const Attendance = () => {
       <div className="container row">
         <div className="button">
           <div className="creat-attendance">
-            <button className="btn btn-warning">Submit Attendance</button>
+            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModal">Submit Attendance</button>
           </div>
+          {/* Place Model hear */}
+          <AttendanceModel/>
         </div>
         <div className="attendance">
           <div className="instructor row">

@@ -1,3 +1,7 @@
+.container-library{
+  max-height: 100vh;
+}
+
 #video a {
   display: block;
   width: 25%;
@@ -20,11 +24,11 @@
 }
 
 #overlay {
-  background: rgba(0,0,0,0.8);
-  position:fixed;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
   top: 0;
   right: 0;
-  left:0;
+  left: 0;
   bottom: 0;
   width: 100%;
   height: 100%;
@@ -52,4 +56,27 @@
 
 #overlay iframe {
   width: 100%;
+}
+
+/* .video-lib {
+  overflow-y: scroll;
+} */
+
+.currentPlaying {
+  overflow: hidden;
+  height: 70px;
+}
+.video-icon {
+  text-align: center;
+  border: 5px solid black;
+  align-self: center;
+  padding: 5px;
+  border-radius: 100%;
+  background-color: black;
+  color: #fff;
+}
+
+.playlistItem {
+  max-height: 400px !important;
+  overflow-y: scroll;
 }

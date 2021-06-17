@@ -20,6 +20,7 @@ import { PATH } from "../config/webPath";
 import Admin from "../Admin/Admin";
 import Users from "../Admin/Users";
 import Student from "../Admin/Student";
+import ForgetPassword from "../pages/ForgetPassword";
 import Page404 from "../pages/Page404";
 
 const Routes = [
@@ -28,6 +29,7 @@ const Routes = [
   { exact: true, path: "/forget-pass", component: ForgetPass },
   { exact: true, path: "/admin", component: Admin },
   { exact: true, path: "/admin/student", component: Student },
+  { exact: true, path: "/reset-pass", component: ForgetPassword },
 
   { exact: true, path: PATH.DASHBOARD, component: Dashboard },
   { exact: true, path: PATH.ANNOUNCEMENT, component: Announcement },

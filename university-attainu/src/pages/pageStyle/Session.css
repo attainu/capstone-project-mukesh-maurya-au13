@@ -1,56 +1,61 @@
 /* Session Style */
-.session{
+/* .SessionContainer{
+    display: flex;
+    flex-direction: column;
+  } */
+
+.session {
   position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-left: 5rem;
   column-gap: 2rem;
   padding: 1rem;
 }
 
-.card-body img{
+.card-body img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
 }
-.card-header{
+.card-header {
   color: var(--blue);
 }
-.recentPlacement{
- overflow-x: scroll;
- margin: 5rem;
+.recentPlacement {
+  overflow-x: scroll;
+  margin: 5rem;
 }
-.placement{
+.placement {
   /* display: flex;
   flex-direction: row;
   justify-content:space-evenly; */
   margin-top: 5rem;
 }
-.container{
+.container {
   display: flex;
   flex-direction: row;
 }
 
 /* Announcement */
-.announce-section{
+.announce-section {
   max-width: 70%;
   margin-left: 3rem;
   overflow-y: scroll;
 }
-.announce-container{
+.announce-container {
   margin-top: 2rem;
   margin-left: 4rem;
   max-width: 100vh;
   max-height: 80vh;
   overflow-y: scroll;
 }
-.announce{
+.announce {
   display: flex;
   flex-direction: row;
 }
-.announce .card-header{
+.announce .card-header {
   background-color: var(--blue);
   color: white;
 }
@@ -59,3 +64,19 @@
   max-height: 100vh;
   overflow-y: scroll;
 } */
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start !important;
+}
+
+.leftButton {
+  align-self: flex-start;
+  align-items: left !important;
+  justify-content: left !important;
+}
+.mcq-Area {
+  margin-top: 5rem;
+}

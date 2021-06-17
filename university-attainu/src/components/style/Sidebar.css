@@ -61,6 +61,8 @@ span {
   background: var(--blue);
   color: #fff;
   transition: all 0.3s;
+  /* text-decoration: none;
+  list-style: none; */
 }
 
 #sidebar.active {
