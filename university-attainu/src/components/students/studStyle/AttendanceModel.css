@@ -1,0 +1,12 @@
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: flex-start !important;
+}
+
+.leftButton {
+  align-self: flex-start;
+  align-items: left !important;
+  justify-content: left !important;
+}

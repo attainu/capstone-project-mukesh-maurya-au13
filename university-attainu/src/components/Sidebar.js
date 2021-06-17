@@ -18,13 +18,15 @@ const Sidebar = () => {
       {/* <!-- Sidebar  --> */}
       <nav id="sidebar">
         <div className="sidebar-header">
-          <img
-            src="https://res.cloudinary.com/bookshelf/image/upload/v1622876232/AttainuClone/logo_wr8uxh.png"
-            className="bbgDoA"
-            width="48px"
-            height="48px"
-            alt="brand-logo"
-          />{" "}
+          <Link to="/dashboard">
+            <img
+              src="https://res.cloudinary.com/bookshelf/image/upload/v1622876232/AttainuClone/logo_wr8uxh.png"
+              className="bbgDoA"
+              width="48px"
+              height="48px"
+              alt="brand-logo"
+            />{" "}
+          </Link>
           AttainU
         </div>
 
