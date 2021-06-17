@@ -26,7 +26,7 @@ const Session = () => {
       <div className="message" hidden={attendanceAlert}>
         <SuccessAlert alertMsg={alertMsg} />
       </div>
-      <div className="">
+      <div className="nothing">
         <div className="session">
           <div className="joinSession">
             <button className="btn btn-warning">
@@ -187,8 +187,13 @@ const Session = () => {
           </div>
         </div>
         <br />
-        <div className="mcq-Area" hidden={false}>
-          <MCQ />
+        <div className="hello-session">
+          <div className="mcq-Area" hidden={false}>
+            <MCQ />
+            <MCQ />
+            <MCQ />
+            <MCQ />
+          </div>
         </div>
       </div>
     </div>
