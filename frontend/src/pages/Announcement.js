@@ -7,15 +7,7 @@ const Announcement = () => {
     <div className="announce-container">
       <div className="display-6 text-primary m-5 p-2">Announcement</div>
       <Announce/>
-      <Announce/>
-      <Announce/>
-      <Announce/>
-      <Announce/>
-      <Announce/>
-      <Announce/>
-      <Announce/>
-      <Announce/>
-      <Announce/>
+      
     </div>
   );
 };

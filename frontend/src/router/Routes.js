@@ -18,9 +18,10 @@ import RecentPlacements from "../pages/RecentPlacements";
 import { PATH } from "../config/webPath";
 
 import Admin from "../Admin/Admin";
-import Users from "../Admin/Users";
+// import Users from "../Admin/Users";
 import Student from "../Admin/Student";
 import Page404 from "../pages/Page404";
+import StudentProfile from "../pages/StudentProfile";
 
 const Routes = [
   { exact: true, path: "/", component: LoginPage },
@@ -38,6 +39,7 @@ const Routes = [
   { exact: true, path: PATH.PENDING_QUES, component: PendingQues },
   { exact: true, path: PATH.RESOLVE_QUES, component: ResolvedQues },
   { exact: true, path: PATH.SESSION, component: Session },
+  { exact: true, path: PATH.PROFILE, component: StudentProfile },
   {
     exact: true,
     path: PATH.RECENT_PLACEMENTS,

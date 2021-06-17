@@ -6,6 +6,7 @@ import thunk from "redux-thunk";
 import { createStore, applyMiddleware } from "redux";
 import CombineReducers from "../reducers/combineReducers";
 
+
 const middleware = [thunk]
 
 const Store = createStore(

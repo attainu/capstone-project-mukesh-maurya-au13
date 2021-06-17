@@ -1,7 +1,12 @@
 import "./style/TopBar.css";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const TopBar = () => {
+  const userLogin = useSelector(state => state.userLogin);
+  const {userInfo} = userLogin;
+
   return (
     <div id="topbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,7 +46,11 @@ const TopBar = () => {
                   alt="profileImg"
                 />
               </div>
-              <div className="text text-primary">User Name</div>
+              {userInfo && (
+                <div className="text text-primary">
+                  <Link to='/profile'>{userInfo.user.name}</Link>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -1,8 +1,33 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
 import "./pageStyle/Login.css";
 import { Link } from "react-router-dom";
+import {useDispatch, useSelector} from 'react-redux';
+import {login} from './../Redux/action/userAction';
+import { PATH } from "../config/webPath";
 
-const LoginPage = () => {
+const LoginPage = ({history}) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const dispatch = useDispatch();
+  const userLogin = useSelector(state => state.userLogin)
+  const {error, userInfo, loading} = userLogin;
+
+  useEffect(() => {
+    if(userInfo) {
+      history.push(PATH.DASHBOARD);
+    }else {
+      history.push('/')
+    }
+    
+  }, [userInfo, history])
+
+  const postLoginData = (e) => {
+    e.preventDefault();
+    //dispatch login
+    dispatch(login(email, password));
+  }
+
   return (
     <div className="container-fluid center">
       <div className="container2 center2">
@@ -16,26 +41,31 @@ const LoginPage = () => {
           />
           <h1>AttainU</h1>
         </div>
+
         <div className="input">
-          <form action="/dashboard">
+          <form method="POST" onSubmit={postLoginData}>
             <input
               name="userName"
               className="form userName"
               type="email"
-              placeholder="User Name"
-              required
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              // required
             />
             <input
               name="password"
               className="form userName"
               type="password"
               placeholder="Password"
-              minLength="8"
+              // minLength="8"
               maxLength="20"
-              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              // required
             />
             <div className="button">
-              <button className="btn btn-warning text-white mt-2">
+              <button type="submit" className="btn btn-warning text-white mt-2">
                 Submit
               </button>
               <div className="signup">
@@ -45,8 +75,11 @@ const LoginPage = () => {
                 </Link>
               </div>
             </div>
+        <div className="text-white bg-warning text-center"> {loading && <small>loading...</small>}</div>
+        <div className="text-white text-center bg-danger"> {error && <small>{error.message}</small>}</div>
           </form>
         </div>
+
         <div className="login-footer login-footer-heading">
           <span className="span-style for-login">Forget Password?</span>
           <Link to="/forget-pass" className="click1 click2">
