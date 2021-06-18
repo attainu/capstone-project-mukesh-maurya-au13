@@ -1,6 +1,11 @@
 import React from 'react'
+import {useSelector} from "react-redux";
 
-const Student = () => {
+
+const StudentProfile = () => {
+  const userLogin = useSelector(state => state.userLogin)
+
+  const {userInfo } = userLogin;
   return (
     <div>
       <table className="table">
@@ -12,8 +17,8 @@ const Student = () => {
         </thead>
         <tbody>
           <tr>
-            <td>Mukesh</td>
-            <td>mukesh@gmail.com</td>
+            <td>{userInfo.user.name}</td>
+            <td>{userInfo.user.email}</td>
           </tr>
         </tbody>
       </table>
@@ -21,4 +26,4 @@ const Student = () => {
   )
 }
 
-export default Student
+export default StudentProfile

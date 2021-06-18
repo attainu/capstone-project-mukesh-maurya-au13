@@ -1,0 +1,5 @@
+{userInfo && (
+                <div className="text text-primary">
+                  <Link to='/profile'>{userInfo.user.name}</Link>
+                </div>
+              )}

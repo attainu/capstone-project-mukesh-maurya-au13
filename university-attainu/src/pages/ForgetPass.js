@@ -1,8 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./pageStyle/Login.css";
-import {Link} from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { forgot_password } from "../Redux/action/userAction";
 
 const ForgetPass = () => {
+  const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const userRegisterList = useSelector((state) => state.userRegisterList);
+
+  const { usersList } = userRegisterList;
+  console.log(usersList);
+
+  const postData = (e) => {
+    e.preventDefault();
+
+    //dispatch data
+    dispatch(forgot_password(email));
+    history.push("/");
+  };
+  
   return (
     <div className="container-fluid center">
       <div className="container2 center2">
@@ -12,15 +30,18 @@ const ForgetPass = () => {
             className="bbgDoA"
             width="72px"
             height="72px"
+            alt="logo"
           />
           <h1>AttainU</h1>
         </div>
         <div className="input">
-          <form action="#">
+          <form method="POST" onSubmit={postData}>
             <input
               className="form userName"
               type="email"
-              placeholder="User Name"
+              placeholder="User Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
             <div className="button ">

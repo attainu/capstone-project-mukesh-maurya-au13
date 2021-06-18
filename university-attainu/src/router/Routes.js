@@ -18,10 +18,11 @@ import RecentPlacements from "../pages/RecentPlacements";
 import { PATH } from "../config/webPath";
 
 import Admin from "../Admin/Admin";
-import Users from "../Admin/Users";
+// import Users from "../Admin/Users";
 import Student from "../Admin/Student";
-import ForgetPassword from "../pages/ForgetPassword";
 import Page404 from "../pages/Page404";
+import StudentProfile from "../pages/StudentProfile";
+
 
 const Routes = [
   { exact: true, path: "/", component: LoginPage },
@@ -29,7 +30,6 @@ const Routes = [
   { exact: true, path: "/forget-pass", component: ForgetPass },
   { exact: true, path: "/admin", component: Admin },
   { exact: true, path: "/admin/student", component: Student },
-  { exact: true, path: "/reset-pass", component: ForgetPassword },
 
   { exact: true, path: PATH.DASHBOARD, component: Dashboard },
   { exact: true, path: PATH.ANNOUNCEMENT, component: Announcement },
@@ -40,6 +40,7 @@ const Routes = [
   { exact: true, path: PATH.PENDING_QUES, component: PendingQues },
   { exact: true, path: PATH.RESOLVE_QUES, component: ResolvedQues },
   { exact: true, path: PATH.SESSION, component: Session },
+  { exact: true, path: PATH.PROFILE, component: StudentProfile },
   {
     exact: true,
     path: PATH.RECENT_PLACEMENTS,

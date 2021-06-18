@@ -1,12 +1,9 @@
+
 import "./style/TopBar.css";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const TopBar = () => {
-  const userLogin = useSelector((state) => state.userLogin);
-  const { userInfo } = userLogin;
-
   return (
     <div id="topbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,17 +45,16 @@ const TopBar = () => {
                   />
                 </Link>
               </div>
-              {/* {userInfo && ( */}
               <div
                 className="text text-primary dropdown-toggle "
                 type="button"
                 data-toggle="dropdown"
               >
-                {userInfo.user.name}
+                User Name
                 <span class="caret"></span>
                 <ul class="dropdown-menu dropdown-menu-dark">
                   <li>
-                    <Link className="dropdown-item" to="/profile">
+                    <Link className="dropdown-item" to="#">
                       Profile
                     </Link>
                   </li>
@@ -72,7 +68,6 @@ const TopBar = () => {
                   </li>
                 </ul>
               </div>
-              {/* )} */}
             </div>
           </div>
         </div>
