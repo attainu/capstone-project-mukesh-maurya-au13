@@ -53,24 +53,27 @@ exports.signup = async (req, res, next) => {
   } catch (error) {
     return res.status(400).json({
       status: "fail",
-    error
+      error,
     });
   }
 };
 
 //login users
 exports.login = asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
+  const { email, password } = req.body;
 
-    // check if email and password is correct
-    const user = await User.findOne({ email }).select("+password").select("+mobile");
+  // check if email and password is correct
+  const user = await User.findOne({ email })
+    .select("+password")
+    .select("+mobile");
 
-    if (user && (await user.correctPassword(password, user.password))) {
-      createSendToken(user, 200, res);
-    } else {
-      return res.status(401).json({ status: "fail", message: "Invalid email or password"});
-    }
-  
+  if (user && (await user.correctPassword(password, user.password))) {
+    createSendToken(user, 200, res);
+  } else {
+    return res
+      .status(401)
+      .json({ status: "fail", message: "Invalid email or password" });
+  }
 });
 
 //protecting all
@@ -149,15 +152,15 @@ exports.forgotPassword = async (req, res, next) => {
         res.status(404).json({ message: "user not found, plz check" })
       );
     }
-    const resetToken = user.createPasswordResetToken();
+    const token = user.createPasswordResetToken();
     user.save({ validateBeforeSave: false });
 
-    const resetURL = `${req.protocol}://${req.get(
-      "host"
-    )}/api/v1/users/resetPassword/${resetToken}`;
+    // const resetURL = `${req.protocol}://${req.get(
+    //   "host"
+    // )} /reset_password/${resetToken}`;
 
-    const message = `Forgot your password? Submit you new password and confirmPassword at: ${resetURL}.\n If you do remember your password please ignore the link! Thank you`;
-    console.log(resetToken);
+    const message = `Forgot your password? Submit you new password and confirmPassword at: <a href="http://localhost:3000/reset_password/${token}">Click here</a> \n If you do remember your password please ignore the link! Thank you`;
+    console.log(token);
 
     await sendEmail({
       email: user.email,
@@ -182,23 +185,23 @@ exports.forgotPassword = async (req, res, next) => {
 };
 
 exports.resetPassword = async (req, res, next) => {
-  const hashToken = crypto
-    .createHash("sha256")
-    .update(req.params.token)
-    .digest("hex");
-  const user = await User.findOne({
-    passwordResetToken: hashToken,
-    passwordResetExpires: { $gt: Date.now() },
-  });
-  if (!user) {
-    return next(res.status(400).json({ message: "Token has been expired" }));
-  }
-  user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
-  user.passwordResetToken = undefined;
-  user.passwordResetExpires = undefined;
-  await user.save();
-  createSendToken(user, 200, res);
+   const hashToken = crypto
+     .createHash("sha256")
+     .update(req.params.token)
+     .digest("hex");
+   const user = await User.findOne({
+     passwordResetToken: hashToken,
+     passwordResetExpires: { $gt: Date.now() },
+   });
+   if (!user) {
+     return next(res.status(400).json({ message: "Token has been expired" }));
+   }
+   user.password = req.body.password;
+   user.passwordConfirm = req.body.passwordConfirm;
+   user.passwordResetToken = undefined;
+   user.passwordResetExpires = undefined;
+   await user.save();
+   createSendToken(user, 200, res);
 };
 
 exports.updatePassword = async (req, res, next) => {

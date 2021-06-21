@@ -12,9 +12,8 @@ const mcqSchema = new mongoose.Schema({
         trim: true,
     },
     correctAnswer: {
-        type: String,
+        type: [],
         required: true,
-        trim: true,
     },
     expireAt: {
         type: Date,

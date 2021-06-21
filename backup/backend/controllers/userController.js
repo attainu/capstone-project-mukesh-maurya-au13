@@ -5,6 +5,8 @@ const Mcq = require("./../model/mcqSchema");
 const Pagination = require("../features/pagination");
 const Announce = require("./../model/announcementSchema");
 const Placement = require("./../model/placementSchema");
+const Library = require("./../model/librarySchema");
+const Session = require("./../model/sessionSchema");
 
 const filterObj = (obj, ...allowedFields) => {
   const newObj = {};
@@ -23,7 +25,7 @@ exports.getUserProfile = async (req, res) => {
   if (user) {
     return res.status(200).json({ status: "success", user });
   } else {
-    res.status(404)
+    res.status(404);
     throw new Error("No such user Exists!");
   }
 };
@@ -113,14 +115,14 @@ exports.markMcq = async (req, res) => {
   const mcq = await Mcq.findById(req.params.id);
   if (!mcq) {
     return res.status(400).json({ message: "no mcq found" });
-  }else {
-  const { options } = req.body;
+  } else {
+    const { options } = req.body;
 
-  console.log(options, mcq);
+    console.log(options, mcq);
   }
 };
 
-//get all the announcementSchema
+//get all the announcements
 exports.announcementPage = async (req, res) => {
   try {
     const announceList = await Announce.find().select("+createdAt");
@@ -156,3 +158,26 @@ exports.getPlacements = async (req, res) => {
     throw new Error(error);
   }
 };
+
+//get all the lecture videos in library
+
+exports.getLibrary = async (req, res) => {
+  try {
+    const library = await Library.find();
+    if (!library) {
+      return res.status(401).json({ status: "fail", message: "no data found" });
+    } else {
+      return res.status(200).json({ status: "success", library });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// join the lecture session
+exports.joinSession = async (req, res) => {
+  const session = await Session.find();
+  console.log(session);
+  return res.status(200).json({ status: "success"});
+}
+

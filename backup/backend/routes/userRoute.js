@@ -15,7 +15,7 @@ router.get("/getUserProfile", authController.protect, userController.getUserProf
 
 
 // forgot password &reset password route
-router.post("/forgotPassword", authController.forgotPassword); //will receive email address
+router.post("/forgotPassword", authController.forgotPassword); //will send email with token link
 router.patch("/resetPassword/:token", authController.resetPassword); //will receive the token
 
 router.patch(
@@ -40,5 +40,8 @@ router.get('/announcementPage', authController.protect, userController.announcem
 //get recent placements page
 router.get('/getPlacements', authController.protect, userController.getPlacements);
 
+//get all the video lectures
+router.get('/getLibrary', authController.protect, userController.getLibrary);
+router.get("/joinSession", authController.protect, userController.joinSession);
 
 module.exports = router;
