@@ -16,11 +16,11 @@
 
 #videos a:hover {
   opacity: 0.7;
+  height: auto;
 }
 
 #videos a img {
   width: 100%;
-  height: auto;
 }
 
 #overlay {
@@ -67,16 +67,24 @@
   height: 70px;
 }
 .video-icon {
-  text-align: center;
-  border: 5px solid black;
-  align-self: center;
-  padding: 5px;
-  border-radius: 100%;
-  background-color: black;
-  color: #fff;
+  border: 3px solid black;
+  max-height: 3rem;
+  /* max-width: 3rem !important; */
+  align-items: center;
+  margin-left: 2rem;
+  
 }
 
 .playlistItem {
-  max-height: 400px !important;
+  max-height: 30rem;
   overflow-y: scroll;
+}
+.VideoTitle{
+  background-color: var(--blue);
+  padding: 1rem;
+  color: white;
+  text-align: center; 
+}
+.VideoMenu{
+  width: 20rem;
 }

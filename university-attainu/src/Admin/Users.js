@@ -1,15 +1,13 @@
 import React from "react";
-import { fetchUser } from "../Redux/action/userAction";
+// import { fetchUser } from "../Redux/action/userAction";
 import AdminSidebar from "./AdminSidebar";
 // import {connect} from "react-redux";
-import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+// import { useState, useEffect } from "react";
+// import { useSelector, useDispatch } from "react-redux";
 
 const Users = () => {
-  const usersList = useSelector((state) => state.usersList);
-  const dispatch = useDispatch();
-  // console.log("state", state);
-  console.log("user tab", usersList);
+  
+  console.log("user tab");
   return (
     <div>
       <div className="w3-bar w3-top w3-black w3-large" style={{ zIndex: 4 }}>
@@ -51,7 +49,7 @@ const Users = () => {
             </tbody>
           </table>
           <button
-            onClick={() => dispatch(fetchUser())}
+            // onClick={() => dispatch(fetchUser())}
             className="btn btn-success"
           >
             get user
@@ -61,16 +59,4 @@ const Users = () => {
     </div>
   );
 };
-
-// const mapStateToProps=(state)=>{
-//   return {
-//     userList:state.userList
-//   }
-// }
-// const mapDispatchToProps=(dispatch)=>{
-//   return {
-//     fetchUsers: ()=> dispatch(fetchUser())
-//   }
-// }
-// export default connect(mapStateToProps, mapDispatchToProps)(Users);
 export default Users;

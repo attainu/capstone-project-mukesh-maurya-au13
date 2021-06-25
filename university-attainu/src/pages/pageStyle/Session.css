@@ -79,7 +79,4 @@
 }
 .mcq-Area {
   margin-top: 5rem;
-  max-width: 100vh;
-  max-height: 80vh;
-  overflow-y: scroll;
 }

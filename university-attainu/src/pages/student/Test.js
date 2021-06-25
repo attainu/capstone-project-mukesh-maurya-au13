@@ -13,7 +13,7 @@ const Test = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true);
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const res = await axios.get("https://jsonplaceholder.typicode.com/todos");
       setPosts(res.data);
       setLoading(false);
     };
@@ -26,12 +26,13 @@ const Test = () => {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
+  console.log("post", posts)
   // Change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
-    <div className="test-container mt-5">
-      <h1 className="text-primary mb-3">Test</h1>
+    <div className="testContainer mx-5 ">
+      <h1 className="textPrimary mb-0">Test</h1>
       <div className="test-list">
         <Posts posts={currentPosts} loading={loading} />
       </div>

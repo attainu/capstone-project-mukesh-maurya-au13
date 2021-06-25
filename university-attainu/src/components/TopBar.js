@@ -1,8 +1,21 @@
 import "./style/TopBar.css";
 import MenuOpenIcon from "@material-ui/icons/MenuOpen";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
+import { logout } from "../Redux/action/userAction";
 
 const TopBar = () => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
+  const history = useHistory();
+  const dispatch = useDispatch();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    // localStorage.removeItem("userInfo");
+    history.push("/");
+  };
+
   return (
     <div id="topbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -44,38 +57,37 @@ const TopBar = () => {
                   />
                 </Link>
               </div>
-              <div
-                className="text text-primary dropdown-toggle "
-                type="button"
-                data-toggle="dropdown"
-              >
-                User Name
-                <span class="caret"></span>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li>
-                    <Link className="dropdown-item" to="#">
-                      Profile
-                    </Link>
-                  </li>
-                  <li>
-                    <hr className="dropdown-divider" />
-                  </li>
-                  <li>
-                    <Link className="dropdown-item" to="user/logout  ">
-                      Logout
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+              {userInfo && (
+                <div
+                  className="text text-primary dropdown-toggle "
+                  type="button"
+                  data-toggle="dropdown"
+                >
+                  {userInfo.user.name}
+                  <span class="caret"></span>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                      <Link className="dropdown-item" to="/profile">
+                        Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                  <button onClick={handleLogout} className="btn btn-primary">Logout</button>
+                      {/* <a onClick={handleLogout} className="dropdown-item">
+                        Logout
+                      <a> */}
+                    </li>
+                  </ul>
+                </div>
+              )}
+              <button onClick={handleLogout} className="btn btn-primary">Logout</button>
             </div>
           </div>
         </div>
       </nav>
-      <div id="main-area">
-        <div className="display-5">
-          {/* Welcome to AttainU University. ***************************************** */}
-        </div>
-      </div>
     </div>
   );
 };

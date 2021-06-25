@@ -35,11 +35,12 @@ const Page404 = () => {
       </div>
 
       <iframe
-        style={{ width: 0, height: 0, border: 0, border: "none" }}
+        style={{ width: 0, height: 0, border: "none" }}
         scrolling="no"
         frameborder="no"
         allow="autoplay"
         src="https://instaud.io/_/2Vvu.mp3"
+        title="picturePlaying"
       ></iframe>
     </div>
   );

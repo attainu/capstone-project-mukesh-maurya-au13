@@ -1,6 +1,7 @@
 import React from "react";
 import "./style/Sidebar.css";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import DashboardSharpIcon from "@material-ui/icons/DashboardSharp";
 import VolumeUpIcon from "@material-ui/icons/VolumeUp";
@@ -13,20 +14,20 @@ import HearingIcon from "@material-ui/icons/Hearing";
 import SortByAlphaIcon from "@material-ui/icons/SortByAlpha";
 
 const Sidebar = () => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
   return (
     <div className="wrapper">
       {/* <!-- Sidebar  --> */}
       <nav id="sidebar">
         <div className="sidebar-header">
-          <Link to="/dashboard">
-            <img
-              src="https://res.cloudinary.com/bookshelf/image/upload/v1622876232/AttainuClone/logo_wr8uxh.png"
-              className="bbgDoA"
-              width="48px"
-              height="48px"
-              alt="brand-logo"
-            />{" "}
-          </Link>
+          <img
+            src="https://res.cloudinary.com/bookshelf/image/upload/v1622876232/AttainuClone/logo_wr8uxh.png"
+            className="bbgDoA"
+            width="48px"
+            height="48px"
+            alt="brand-logo"
+          />{" "}
           AttainU
         </div>
 
@@ -52,9 +53,13 @@ const Sidebar = () => {
               <AccountTreeIcon /> Student
             </a>
             <ul className="collapse list-unstyled" id="Student">
-              <li>
-                <Link to="/attendance">Attendance</Link>
-              </li>
+              {userInfo?.user.role === "user" ? (
+                <li>
+                  <Link to="/attendance">Attendance</Link>
+                </li>
+              ) : (
+                ""
+              )}
               <li>
                 <Link to="/assignment">CC/Assignment</Link>
               </li>

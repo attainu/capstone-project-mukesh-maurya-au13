@@ -2,6 +2,7 @@
   position: absolute;
   margin: 5rem;
   width: 720px;
+  /* max-height: 80vh; */
   /* width: min-content; */
 }
 

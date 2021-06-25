@@ -1,3 +1,5 @@
+
+
 export const WarningAlert = ({ props }) => {
   console.log(props);
   return (
@@ -30,7 +32,7 @@ export const DangerAlert = (props) => {
       role="alert"
       style={{ maxWidth: "70%" }}
     >
-      {props.alertMsg}
+      {props.message}
     </div>
   );
 };

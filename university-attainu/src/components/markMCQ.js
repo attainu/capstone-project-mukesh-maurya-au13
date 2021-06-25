@@ -6,7 +6,7 @@ const markMCQ = () => {
       <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#createMCQ">
         Create MCQ
       </button>
-      <div class="modal fade" id="createMCQ" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      <div class="modal fade" id="createMCQ" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">

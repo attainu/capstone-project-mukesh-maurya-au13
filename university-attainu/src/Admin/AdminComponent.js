@@ -247,7 +247,7 @@ const AdminComponent = () => {
         </footer>
         {/* <!-- End page content --> */}
       </div>
-      //{" "}
+      {" "}
     </div>
   );
 };

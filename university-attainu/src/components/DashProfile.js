@@ -1,6 +1,22 @@
-import React from "react";
-
+import React, {useEffect} from "react";
+import {useSelector} from "react-redux";
+import { PATH } from "../config/webPath";
+import { useHistory } from "react-router-dom";
 const DashProfile = () => {
+    const history = useHistory();
+    const userLogin = useSelector(state => state.userLogin);
+    const { userInfo } = userLogin;   
+
+    useEffect(() => {
+        if(userInfo && userInfo.user) {
+            history.push(PATH.DASHBOARD)
+            console.log("hello");
+        }else{
+          history.push('/')
+        }
+      },[history, userInfo])
+        
+
   return (
     <div className="container">
       <div className="main-body">
@@ -16,13 +32,17 @@ const DashProfile = () => {
                     width="150"
                   />
                   <div className="mt-3">
-                    <h4>Mukesh Maurya</h4>
+                    <h4>Welcome, {userInfo?.user.name}</h4>
                     <p className="text-secondary mb-1">Full Stack Developer</p>
                     <p className="text-primary font-size-sm">
-                      Git hub : https://github.com/mukesh-maurya-au13
+                      Git hub : https://github.com/{userInfo?.user.name}-au13
                     </p>
-                    <button className="btn btn-primary m-1">Change Avatar</button>
-                    <button className="btn btn-outline-primary m-2">Edit Profile</button>
+                    <button className="btn btn-primary m-1">
+                      Change Avatar
+                    </button>
+                    <button className="btn btn-outline-primary m-2">
+                      Edit Profile
+                    </button>
                   </div>
                 </div>
               </div>
@@ -36,7 +56,7 @@ const DashProfile = () => {
                     <h6 className="mb-0">Full Name</h6>
                   </div>
                   <div className="col-sm-9 text-secondary">
-                    Mukesh Kumar Maurya
+                    {userInfo?.user.name}
                   </div>
                 </div>
                 <hr />
@@ -45,7 +65,7 @@ const DashProfile = () => {
                     <h6 className="mb-0">Email</h6>
                   </div>
                   <div className="col-sm-9 text-secondary">
-                    Mukesh.india9@gmail.com
+                    {userInfo?.user.email}
                   </div>
                 </div>
                 <hr />
@@ -53,7 +73,9 @@ const DashProfile = () => {
                   <div className="col-sm-3">
                     <h6 className="mb-0">Phone</h6>
                   </div>
-                  <div className="col-sm-9 text-secondary">+91 7011074505</div>
+                  <div className="col-sm-9 text-secondary">
+                    {userInfo?.user.mobile}
+                  </div>
                 </div>
                 <hr />
                 <div className="row">
@@ -76,8 +98,8 @@ const DashProfile = () => {
                   </div>
                 </div>
                 <hr />
-                <span class="label blue">Instructor: Manish Mahanth</span>
-                <span class="label pink">Mentor: Swati Shelke </span>
+                <span className="label blue">Instructor: Manish Mahanth</span>
+                <span className="label pink">Mentor: Swati Shelke </span>
               </div>
             </div>
           </div>

@@ -2,3 +2,15 @@
   background-color: var(--vlue);
   color: white;
 }
+
+.testContainer{
+  max-width: 940px;
+  max-height: 100vh;
+  overflow-x: scroll;
+}
+.textPrimary{
+  border: 1px solid var(--blue);
+  color: white;
+  padding: 0.5rem;
+  background-color: var(--blue);
+}

@@ -9,4 +9,5 @@ export const PATH = {
   RESOLVE_QUES: "/resolve-ques",
   SESSION: "/session",
   RECENT_PLACEMENTS: "/recent-placements",
+  PROFILE: '/profile',
 };
